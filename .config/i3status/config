@@ -1,0 +1,53 @@
+general {
+	output_format = "i3bar"
+	colors = true
+	interval = 5
+
+	color_good = "#00cd00"
+	color_degraded = "#cdcd00"
+	color_bad = "#cd0000"
+}
+
+order += nowplaying
+order += "volume master"
+order += "wireless wlp3s0"
+order += "ethernet enp4s0"
+order += "battery 0"
+order += "time"
+
+nowplaying {
+}
+
+volume master {
+	format = "♪: %volume"
+	format_muted = "♪:m%volume"
+	mixer = "Master"
+}
+
+wireless wlp3s0 {
+	format_up = "(%quality at %essid) %ip"
+	format_down = "w"
+}
+
+ethernet enp4s0 {
+	format_up = "e: %ip"
+	format_down = "e"
+}
+
+battery 0 {
+	format = "%status %percentage"
+	format_down = "no battery"
+	status_chr = "CHG"
+	status_bat = "bat"
+	status_full = "bat"
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 15
+}
+
+cpu_usage {
+	format = "CPU: %usage"
+}
+
+time {
+	format = "%b-%d-%Y %I:%M%P"
+}
