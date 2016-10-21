@@ -1,0 +1,37 @@
+" sweet custom colors
+colorscheme newdark
+
+" noscript shortcut
+command! ns :noscript popup
+" source THIS VERY FILE shortcut
+command! sourcerc :source ~/.vimperatorrc
+" Dev inspector shortcut
+command! inspector :emenu Tools.Web Developer.Inspector
+
+" IDK what this does i never even use it
+set editor='vim -f'
+
+" search duckduckgo by default
+" set defsearch=duckduckgo
+
+" faster scrolling
+noremap j 3j
+noremap k 3k
+noremap h 3h
+noremap l 3l
+
+" private window
+nnoremap <c-s-p> i<c-s-p>
+
+" detatch tab
+nnoremap <c-s-d> :tabdetach<CR>
+" dup tab
+nnoremap <c-s-t> :tabduplicate<CR>
+
+map <BS> <Nop>
+
+" navbar is for amateurs
+set gui=nonavigation
+
+" fix for no completions
+js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
